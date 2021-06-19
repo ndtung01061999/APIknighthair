@@ -13,6 +13,7 @@ public class CustomerConverter {
 		custormerdto.setPhone(customer.getPhone());
 		custormerdto.setImage(customer.getImage());
 		custormerdto.setAddress(customer.getAddress());
+		custormerdto.setFacebook(customer.getFacebook());
 		custormerdto.setIddistrict(district.getId());
 		custormerdto.setDistrict(district.getName());
 		custormerdto.setCity(city.getName());

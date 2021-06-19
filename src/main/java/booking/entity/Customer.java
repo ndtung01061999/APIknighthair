@@ -21,6 +21,7 @@ public class Customer {
 	String phone;
 	String image;
 	String address;
+	String facebook;
 	int iddistrict;
 	public Customer() {}
 	
@@ -45,6 +46,14 @@ public class Customer {
 	
 	public int getIdaccount() {
 		return idaccount;
+	}
+
+	public String getFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
 	}
 
 	public void setIdaccount(int idaccount) {

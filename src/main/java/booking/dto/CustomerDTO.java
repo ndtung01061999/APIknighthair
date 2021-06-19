@@ -9,6 +9,7 @@ public class CustomerDTO {
 	String address;
 	String district;
 	String city;
+	String facebook;
 	int iddistrict;
 	int idcity;
 	public CustomerDTO() {}
@@ -43,6 +44,13 @@ public class CustomerDTO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getFacebook() {
+		return facebook;
+	}
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
 	}
 	public String getPhone() {
 		return phone;

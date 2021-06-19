@@ -29,12 +29,10 @@ public class CustomerController {
 	public CustomerDTO getId(@PathVariable("id") int id){
 		return  cs.findOneidaccount(id);
 	}
-	
 	@PutMapping("/{id}")
 	public void updateCustomer(@PathVariable("id") int id, @RequestBody CustomerDTO customerdto) {
 		cs.updatecustomer(id,customerdto);
 	}
-	
 	@PostMapping("")
 	public void createCustomer(@RequestBody CustomerDTO customerdto) {
 		cs.createCustomer(customerdto);

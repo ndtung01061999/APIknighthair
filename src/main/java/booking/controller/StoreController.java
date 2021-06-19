@@ -56,8 +56,6 @@ public class StoreController {
 	}
 	
 	
-	
-	
 	@GetMapping("/service/{id}")
 	public List<ServiceHairDTO> getService(@PathVariable("id") int id){
 		return  ss.findService(id);
