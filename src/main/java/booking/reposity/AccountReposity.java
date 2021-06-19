@@ -10,6 +10,6 @@ import booking.entity.Booking;
 
 
 public interface AccountReposity extends JpaRepository<Account,Integer>{
-	@Query(value="SELECT * FROM knightdb.account where name=?1 and password=?2 and type=?3", nativeQuery = true)
+	@Query(value="SELECT * FROM account where name=?1 and password=?2 and type=?3", nativeQuery = true)
 	Account findByAccount(String name,String password, int type);
 }
