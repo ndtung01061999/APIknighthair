@@ -161,7 +161,7 @@ public class BookingService {
 		Account account = ar.findOne(bookingdto.getIdaccount());
 		booking.setAccounts(account);
 		if(account.getType()==2) booking.setStatus(1);
-		else booking.setStatus(1); booking.setStatus(3);
+		else booking.setStatus(3); 
 		booking.setDate(java.time.LocalDateTime.now().toString());
 		br.save(booking);
 		List<DetailbookingDTO> details = bookingdto.getListdetail();
