@@ -66,8 +66,7 @@ public class StoreService {
 	private Equiment_timeReposity etr;
 	@Autowired
 	private TimelineReposity tlr;
-	
-	
+
 	public List<StoreDTO> findAll() {
 		List<Store> stores = new ArrayList<Store>();
 		stores = sr.findAll();
@@ -94,7 +93,7 @@ public class StoreService {
 		Store store = sr.findOne(id);
 		StoreDTO storedto = new StoreDTO();
 		StoreConverter sc = new StoreConverter();
-		sc.mapEntityToDTO(store, storedto, tr.findByStore(store.getId()),citr.findByIdCity(store.getIddistrict()));
+		sc.mapEntityToDTO(store, storedto, tr.findByStore(store.getId()), citr.findByIdCity(store.getIddistrict()));
 		return storedto;
 	}
 
@@ -123,7 +122,8 @@ public class StoreService {
 				for (Store item : stores) {
 					StoreDTO storedto = new StoreDTO();
 					StoreConverter sc = new StoreConverter();
-					sc.mapEntityToDTO(item, storedto, tr.findByStore(item.getId()),citr.findByIdCity(item.getIddistrict()));
+					sc.mapEntityToDTO(item, storedto, tr.findByStore(item.getId()),
+							citr.findByIdCity(item.getIddistrict()));
 					storedtos.add(storedto);
 				}
 			}
@@ -137,7 +137,8 @@ public class StoreService {
 		for (int i = 0; i < stores.size(); i++) {
 			StoreDTO storedto = new StoreDTO();
 			StoreConverter sc = new StoreConverter();
-			sc.mapEntityToDTO(stores.get(i), storedto, tr.findByStore(stores.get(i).getId()),citr.findByIdCity(stores.get(i).getIddistrict()));
+			sc.mapEntityToDTO(stores.get(i), storedto, tr.findByStore(stores.get(i).getId()),
+					citr.findByIdCity(stores.get(i).getIddistrict()));
 			storedtos.add(storedto);
 		}
 		return storedtos;
@@ -319,13 +320,13 @@ public class StoreService {
 		return storecommentdto;
 	}
 
-	public List<BookingDTO> findbooking(int id,String date) {
+	public List<BookingDTO> findbooking(int id, String date) {
 		List<BookingDTO> bookingdtos = new ArrayList();
-		Store store=sr.findbyAccount(id);
+		Store store = sr.findbyAccount(id);
 		List<Booking> bookings = br.findByIdstore(store.getId());
 		for (int i = 0; i < bookings.size(); i++) {
 			List<DetailbookingDTO> detailbookingdtos = new ArrayList();
-			List<Detail_Booking> detailbookings = dbr.findbyBookingandDate(bookings.get(i).getId(),date);
+			List<Detail_Booking> detailbookings = dbr.findbyBookingandDate(bookings.get(i).getId(), date);
 			for (int j = 0; j < detailbookings.size(); j++) {
 				Store_Service store_service = ssr.findOne(detailbookings.get(j).getStore_services().getId());
 				Timeline timeline = tlr.findByStore(store_service.getStores().getId());
@@ -336,14 +337,14 @@ public class StoreService {
 				detailbookingdto.setTimebooking(converTime(timeline.getTime_start(), detailbookingdto.getTime()));
 				detailbookingdtos.add(detailbookingdto);
 			}
-			if(detailbookingdtos.size()==0) {
-				break;
+			if (detailbookingdtos.size() != 0) {
+				BookingConverter bc = new BookingConverter();
+				BookingDTO bookingdto = new BookingDTO();
+				bookingdto.setListdetail(detailbookingdtos);
+				bc.mapEntityToDTO(bookings.get(i), bookingdto, detailbookingdtos);
+				bookingdtos.add(bookingdto);
 			}
-			BookingConverter bc = new BookingConverter();
-			BookingDTO bookingdto = new BookingDTO();
-			bookingdto.setListdetail(detailbookingdtos);
-			bc.mapEntityToDTO(bookings.get(i), bookingdto, detailbookingdtos);
-			bookingdtos.add(bookingdto);
+
 		}
 		return bookingdtos;
 	}
@@ -352,27 +353,27 @@ public class StoreService {
 		Store store = sr.findbyAccount(id);
 		StoreDTO storedto = new StoreDTO();
 		StoreConverter sc = new StoreConverter();
-		sc.mapEntityToDTO(store, storedto, tr.findByStore(store.getId()),citr.findByIdCity(store.getId()));
+		sc.mapEntityToDTO(store, storedto, tr.findByStore(store.getId()), citr.findByIdCity(store.getId()));
 		return storedto;
 	}
 
 	public List<EquipmentDTO> countEquipment(int id) {
-		List<EquipmentDTO> Equipmentdtos=new ArrayList<>();
-		for(int i=1;i<=2;i++) {
-			EquipmentDTO Equipmentdto=new EquipmentDTO();
+		List<EquipmentDTO> Equipmentdtos = new ArrayList<>();
+		for (int i = 1; i <= 2; i++) {
+			EquipmentDTO Equipmentdto = new EquipmentDTO();
 			Equipmentdto.setType(i);
 			Equipmentdto.setNumberOf(er.findCountStoreandType(id, i));
 			Equipmentdtos.add(Equipmentdto);
 		}
-		
+
 		return Equipmentdtos;
 	}
 
-	public void updateStore(int id,StoreDTO storedto) {
+	public void updateStore(int id, StoreDTO storedto) {
 		Store store = sr.findOne(id);
-		Timeline timeline= tr.findByStore(store.getId());
+		Timeline timeline = tr.findByStore(store.getId());
 		StoreConverter sc = new StoreConverter();
-		sc.mapUpdatestore(store, storedto,timeline);
+		sc.mapUpdatestore(store, storedto, timeline);
 		sr.save(store);
 		tr.save(timeline);
 	}
