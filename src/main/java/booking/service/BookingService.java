@@ -192,6 +192,7 @@ public class BookingService {
 					db_painthair.setBookings(booking);
 					db_painthair.setEquipment_timelines(et);
 					db_painthair.setStore_services(store_service);
+					
 					dbr.save(db_painthair);
 				}
 			}

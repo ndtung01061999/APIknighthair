@@ -3,6 +3,7 @@ package booking.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ public class StoreController {
 	
 	@Autowired
 	private StoreService ss;
+
 	@GetMapping("")
 	public List<StoreDTO> getAll(){
 		return (List<StoreDTO>) ss.findAll();

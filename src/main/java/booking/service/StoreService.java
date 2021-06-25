@@ -66,7 +66,8 @@ public class StoreService {
 	private Equiment_timeReposity etr;
 	@Autowired
 	private TimelineReposity tlr;
-
+	
+	
 	public List<StoreDTO> findAll() {
 		List<Store> stores = new ArrayList<Store>();
 		stores = sr.findAll();
