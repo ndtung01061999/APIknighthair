@@ -35,7 +35,12 @@ public class AccoutController {
 	public AccountDTO findoneaccount(@PathVariable("name") String name,@PathVariable("password") String password,@PathVariable("type") int type){
 		return as.findone(name,password,type);
 	}
-	
+
+	@PostMapping("/login")
+	public String login(@RequestBody AccountDTO accountdto){
+		return as.login(accountdto.getName(),accountdto.getPassword(),accountdto.getType());
+	}
+
 	@PutMapping("/{id}")
 	public void updatePassword(@PathVariable("id") int id,@RequestBody AccountDTO accountdto) {
 		as.updatePassword(id,accountdto);

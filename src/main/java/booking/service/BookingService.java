@@ -34,20 +34,24 @@ import booking.reposity.TimelineReposity;
 
 @Service
 public class BookingService {
-	@Autowired
-	private BookingReposity br;
-	@Autowired
-	private Detail_BookingReposity dbr;
-	@Autowired
-	private Store_ServiceReposity ssr;
-	@Autowired
-	private Equiment_timeReposity etr;
-	@Autowired
-	private AccountReposity ar;
-	@Autowired
-	private EquimentReposity er;
-	@Autowired
-	private TimelineReposity tlr;
+	private final BookingReposity br;
+	private final Detail_BookingReposity dbr;
+	private final Store_ServiceReposity ssr;
+	private final Equiment_timeReposity etr;
+	private final AccountReposity ar;
+	private final EquimentReposity er;
+	private final TimelineReposity tlr;
+
+	public BookingService(BookingReposity br, Detail_BookingReposity dbr, Store_ServiceReposity ssr, Equiment_timeReposity etr, AccountReposity ar, EquimentReposity er, TimelineReposity tlr) {
+		this.br = br;
+		this.dbr = dbr;
+		this.ssr = ssr;
+		this.etr = etr;
+		this.ar = ar;
+		this.er = er;
+		this.tlr = tlr;
+	}
+
 	public List<BookingDTO> getaccount(int id) {
 		List<BookingDTO> bookingdtos = new ArrayList();
 		List<Booking> bookings = br.findByAccount(id);
