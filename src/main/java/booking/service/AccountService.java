@@ -48,14 +48,6 @@ public class AccountService {
 		}
 		return accountdto;
 	}
-	public String login(String name, String password, int type) {
-		Account account = ar.findByAccount(name, password, type);
-		AccountDTO accountdto = new AccountDTO();
-		if (account != null) {
-			return "Thanh cong";
-		}
-		return "That bai";
-	}
 	public void updatePassword(int id, AccountDTO accountdto) {
 		Account account = ar.findOne(id);
 		if (account != null) {

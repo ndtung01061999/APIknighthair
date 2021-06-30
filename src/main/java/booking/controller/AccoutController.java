@@ -37,8 +37,8 @@ public class AccoutController {
 	}
 
 	@PostMapping("/login")
-	public String login(@RequestBody AccountDTO accountdto){
-		return as.login(accountdto.getName(),accountdto.getPassword(),accountdto.getType());
+	public AccountDTO login(@RequestBody AccountDTO accountdto){
+		return as.findone(accountdto.getName(),accountdto.getPassword(),accountdto.getType());
 	}
 
 	@PutMapping("/{id}")
