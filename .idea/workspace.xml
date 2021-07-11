@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e03fda96-da07-4a4d-b067-d44caa1c847c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/dto/CommentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/dto/StoreCommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/dto/StoreCommentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/Equiment_timeReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/Equiment_timeReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +102,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
