@@ -40,12 +40,17 @@ public class CustomerService {
 		cr.save(customer);
 	}
 	public void createCustomer(CustomerDTO customerdto) {
-		
+
 		Customer customer=new Customer();
 		CustomerConverter cc=new CustomerConverter();
 		cc.mapDTOtoEntity(customer, customerdto);
 		customer.setIdaccount(customerdto.getIdaccount());
 		cr.save(customer);
 	}
-	
+
+	public void updateIamgecustomer(int id, CustomerDTO image) {
+		Customer customer=cr.findByAccount(id);
+		customer.setImage(image.getImage());
+		cr.save(customer);
+	}
 }

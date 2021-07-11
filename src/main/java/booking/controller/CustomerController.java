@@ -22,7 +22,7 @@ import booking.service.CustomerService;
 @RestController
 @RequestMapping(value="/customer")
 public class CustomerController {
-	
+
 	@Autowired
 	private CustomerService cs;
 	@GetMapping("/{id}")
@@ -33,6 +33,12 @@ public class CustomerController {
 	public void updateCustomer(@PathVariable("id") int id, @RequestBody CustomerDTO customerdto) {
 		cs.updatecustomer(id,customerdto);
 	}
+
+	@PutMapping("image/{id}")
+	public void updateIamge(@PathVariable("id") int id, @RequestBody CustomerDTO image) {
+		cs.updateIamgecustomer(id,image);
+	}
+
 	@PostMapping("")
 	public void createCustomer(@RequestBody CustomerDTO customerdto) {
 		cs.createCustomer(customerdto);
