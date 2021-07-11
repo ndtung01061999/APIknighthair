@@ -159,7 +159,6 @@ public class BookingService {
 		}
 		return ideq;
 	}
-
 	public void create(BookingDTO bookingdto) {
 		Booking booking = new Booking();
 		Account account = ar.findOne(bookingdto.getIdaccount());
@@ -178,7 +177,6 @@ public class BookingService {
 				Equipment_timeline et = new Equipment_timeline();
 				et.setEquipments(equip);
 				et.setDate(details.get(i).getDate());
-				System.out.println(details.get(i).getDate());
 				et.setOrdinalnumber(details.get(i).getTime());
 				etr.save(et);
 				Detail_Booking db = new Detail_Booking();
@@ -189,7 +187,6 @@ public class BookingService {
 				if(store_service.getServicehairs().getNameservice().equals("Nhuộm tóc")) {
 					Equipment_timeline et_painthair = new Equipment_timeline();
 					et_painthair.setEquipments(equip);
-					System.out.println(details.get(i).getDate());
 					et_painthair.setDate(details.get(i).getDate());
 					et_painthair.setOrdinalnumber(details.get(i).getTime()+1);
 					etr.save(et_painthair);
@@ -197,7 +194,6 @@ public class BookingService {
 					db_painthair.setBookings(booking);
 					db_painthair.setEquipment_timelines(et);
 					db_painthair.setStore_services(store_service);
-					
 					dbr.save(db_painthair);
 				}
 			}

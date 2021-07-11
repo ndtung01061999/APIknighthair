@@ -99,14 +99,16 @@ public class StoreController {
 	public List<EquipmentDTO> countEquipment(@PathVariable("id") int id){
 		return  ss.countEquipment(id);
 	}
+
+
 	@PostMapping("/equipment/{id}")
 	public void createEquipment(@PathVariable("id") int id,@RequestBody EquipmentDTO equipmentdto){
 		  ss.createEquipment(id,equipmentdto);
 	}
 	
 	@PutMapping("/equipment/{id}")
-	public void deleteEquipment(@PathVariable("id") int id,@RequestBody EquipmentDTO equipmentdto) {
-		ss.deleteEquiment(id, equipmentdto);
+	public String deleteEquipment(@PathVariable("id") int id,@RequestBody EquipmentDTO equipmentdto) {
+		return ss.deleteEquiment(id, equipmentdto);
 	}
 	
 	@GetMapping("/comment/{id}")

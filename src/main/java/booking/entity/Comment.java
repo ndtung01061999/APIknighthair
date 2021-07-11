@@ -1,8 +1,11 @@
 package booking.entity;
 
 public interface Comment {
-	String getName();
-	String getAvatar();
 	String getComment();
+	String getAvatar();
 	int getPoint();
+	String getName();
+
+
+
 }

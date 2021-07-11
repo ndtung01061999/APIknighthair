@@ -12,10 +12,7 @@ public class StoreCommentDTO {
 		int avgPoint = 0;
 		int n =  listcomment.size();
 		for (int i = 0; i < listcomment.size(); i++) {
-			if (listcomment.get(i).getPoint() > 0) {
-				avgPoint += listcomment.get(i).getPoint();
-			}
-			else n-=1;
+			avgPoint += listcomment.get(i).getPoint();
 		}
 		if(n>0)
 		return avgPoint / n;

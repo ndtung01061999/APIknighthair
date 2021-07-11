@@ -178,7 +178,6 @@ public class StoreService {
 		}
 		return timelinedtos;
 	}
-
 	String converTime(String time_start, int n) {
 		String time = "";
 		String time_startnew[] = time_start.split(":");
@@ -215,7 +214,6 @@ public class StoreService {
 
 		return time;
 	}
-
 	int countTime(String time_start, String time_end) {
 		String time_startnew[] = time_start.split(":");
 		int hourStart = Integer.parseInt(time_startnew[0]);
@@ -285,8 +283,7 @@ public class StoreService {
 		}
 
 	}
-
-	public void deleteEquiment(int id, EquipmentDTO equipmentdto) {
+	public String deleteEquiment(int id, EquipmentDTO equipmentdto) {
 		int dem = 0;
 		for (int i = 0; i < equipmentdto.getNumberOf(); i++) {
 			List<Integer> et = er.findIdetBystoreanDate(id, equipmentdto.getType());
@@ -308,13 +305,12 @@ public class StoreService {
 			}
 		}
 		if (dem == 0)
-			System.out.println("khong xoa duoc ghe nao");
+			return "fail";
 		else
-			System.out.println("xoa duoc:" + dem);
+			return "success";
 	}
 
 	public StoreCommentDTO findComment(int id) {
-
 		StoreCommentDTO storecommentdto = new StoreCommentDTO();
 		storecommentdto.setListcomment(sr.findByComment(id));
 		return storecommentdto;

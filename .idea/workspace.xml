@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e03fda96-da07-4a4d-b067-d44caa1c847c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/controller/AccoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/controller/AccoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/controller/AccoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/controller/AccoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/service/AccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/service/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/service/BookingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/dto/CommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/dto/StoreCommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/dto/StoreCommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +42,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/jhipster-project/demo1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -78,7 +89,11 @@
       <workItem from="1624979069420" duration="31000" />
       <workItem from="1624979157732" duration="2127000" />
       <workItem from="1624983349278" duration="3516000" />
-      <workItem from="1625060287321" duration="707000" />
+      <workItem from="1625060287321" duration="5667000" />
+      <workItem from="1625103722447" duration="3802000" />
+      <workItem from="1625118679713" duration="1217000" />
+      <workItem from="1625146739330" duration="54000" />
+      <workItem from="1626017250328" duration="1517000" />
     </task>
     <servers />
   </component>
