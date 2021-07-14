@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import booking.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -12,14 +13,6 @@ import booking.converter.BookingConverter;
 import booking.converter.DetailbookingConverter;
 import booking.converter.ServiceConverter;
 import booking.converter.StoreConverter;
-import booking.dto.BookingDTO;
-import booking.dto.CommentDTO;
-import booking.dto.DetailbookingDTO;
-import booking.dto.EquipmentDTO;
-import booking.dto.ServiceHairDTO;
-import booking.dto.StoreCommentDTO;
-import booking.dto.StoreDTO;
-import booking.dto.TimelineDTO;
 import booking.entity.Booking;
 import booking.entity.City;
 import booking.entity.Comment;
@@ -372,5 +365,27 @@ public class StoreService {
 		sc.mapUpdatestore(store, storedto, timeline);
 		sr.save(store);
 		tr.save(timeline);
+	}
+
+	public int reportbooking(int id, reportDTO reportdto) {
+		int count=0;
+		List<Integer> list =new ArrayList<>();
+		if (reportdto.getType()==1) {
+			list = br.findByIdandDate(id, reportdto.getDate());
+		}
+		else if (reportdto.getType()==2) {
+			String[] date = reportdto.getDate().split("-");
+			int year=Integer.parseInt(date[0]);
+			int month=Integer.parseInt(date[1]);
+			list = br.findByIdandMonth(id,month,year);
+		}
+		for(int i=0;i<list.size()-1;i++){
+		if (list.get(i) == list.get(i+1)) {
+
+		}
+		else { count++; }
+		}
+		if (list.size() > 0) count++;
+		return count;
 	}
 }

@@ -4,15 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e03fda96-da07-4a4d-b067-d44caa1c847c" name="Default Changelist" comment="">
+    <list default="true" id="e03fda96-da07-4a4d-b067-d44caa1c847c" name="Default Changelist" comment="fixed comment">
+      <change afterPath="$PROJECT_DIR$/src/main/java/booking/dto/reportDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/booking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/controller/StoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/reposity/StoreReposity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/reposity/StoreReposity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/service/StoreService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,6 +66,19 @@
     <selection>jr</selection>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="booking" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="booking.Application" />
@@ -77,6 +106,14 @@
       <workItem from="1625146739330" duration="54000" />
       <workItem from="1626017250328" duration="1517000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed comment">
+      <created>1626234426798</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626234426799</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +145,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="fixed comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed comment" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/booking/service/StoreService.java</url>
+          <line>376</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/booking/service/StoreService.java</url>
+          <line>377</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/booking/service/StoreService.java</url>
+          <line>378</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/booking/service/StoreService.java</url>
+          <line>379</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

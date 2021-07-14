@@ -11,7 +11,7 @@ import booking.entity.Booking;
 public interface BookingReposity extends JpaRepository<Booking,Integer>{
 	@Query(value="SELECT * FROM booking WHERE idaccount=?1 order by date DESC", nativeQuery = true)
 	List<Booking> findByAccount(int id);
-	
+
 	@Query(value=" SELECT booking.id,booking.idaccount,booking.date,booking.pointcomment,booking.comment,booking.status FROM booking,detail_booking,store_service\n"
 			+ " where\n"
 			+ " booking.id=detail_booking.idbooking\n"
@@ -19,4 +19,22 @@ public interface BookingReposity extends JpaRepository<Booking,Integer>{
 			+ " and store_service.idstore=?1\n"
 			+ " group by booking.id ", nativeQuery = true)
 	List<Booking> findByIdstore(int id);
+
+	@Query(value = "select booking.id from booking, store,detail_booking,equipment_timeline,equipment\n" +
+			" where\n" +
+			" booking.id = detail_booking.idbooking and\n" +
+			" detail_booking.idet= equipment_timeline.id and\n" +
+			" equipment_timeline.idequipment= equipment.id and\n" +
+			" equipment.idstore= store.id and\n" +
+			" store.id=?1 and equipment_timeline.date=?2",nativeQuery = true)
+	List<Integer> findByIdandDate(int id,String date);
+
+	@Query(value = "select booking.id from booking, store,detail_booking,equipment_timeline,equipment\n" +
+			" where\n" +
+			" booking.id = detail_booking.idbooking and\n" +
+			" detail_booking.idet= equipment_timeline.id and\n" +
+			" equipment_timeline.idequipment= equipment.id and\n" +
+			" equipment.idstore= store.id and\n" +
+			" store.id=?1 and month(equipment_timeline.date)=?2 and year(equipment_timeline.date)=?3",nativeQuery = true)
+	List<Integer> findByIdandMonth(int id,int month,int year);
 }
