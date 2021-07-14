@@ -15,8 +15,8 @@ import booking.entity.Store;
 public interface StoreReposity extends JpaRepository<Store,Integer>{
 	@Query(value="SELECT * FROM store WHERE iddistrict=?1", nativeQuery = true)
 	List<Store> findByDistrict(int id);
-	
-	@Query(value="select customer.name as name,customer.image as avatar,booking.comment as comment,booking.pointcomment as point\n"
+
+	@Query(value="select distinct customer.name as name,customer.image as avatar,booking.comment as comment,booking.pointcomment as point\n"
 			+ "from customer,account,booking, detail_booking, store_service, store\n"
 			+ "where\n"
 			+ "customer.idaccount=account.id and\n"
@@ -27,7 +27,7 @@ public interface StoreReposity extends JpaRepository<Store,Integer>{
 			+ "store.id=?1 and booking.pointcomment>0",nativeQuery = true)
 	List<Comment> findByComment(int id);
 
-	
+
 	@Query(value="SELECT * FROM store WHERE idaccount=?1", nativeQuery = true)
 	Store findbyAccount(int id);
 }

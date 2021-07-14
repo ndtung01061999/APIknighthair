@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e03fda96-da07-4a4d-b067-d44caa1c847c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/BookingReposity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/Equiment_timeReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/Equiment_timeReposity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/entity/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/reposity/BookingReposity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/booking.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/reposity/StoreReposity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +50,6 @@
     <selection>jr</selection>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="booking" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="booking.Application" />
