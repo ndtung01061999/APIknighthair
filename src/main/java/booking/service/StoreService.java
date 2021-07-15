@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import booking.dto.*;
+import booking.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -13,17 +14,6 @@ import booking.converter.BookingConverter;
 import booking.converter.DetailbookingConverter;
 import booking.converter.ServiceConverter;
 import booking.converter.StoreConverter;
-import booking.entity.Booking;
-import booking.entity.City;
-import booking.entity.Comment;
-import booking.entity.Detail_Booking;
-import booking.entity.District;
-import booking.entity.Equipment;
-import booking.entity.Equipment_timeline;
-import booking.entity.ServiceHair;
-import booking.entity.Store;
-import booking.entity.Store_Service;
-import booking.entity.Timeline;
 import booking.reposity.BookingReposity;
 import booking.reposity.CityReposity;
 import booking.reposity.Detail_BookingReposity;
@@ -367,25 +357,18 @@ public class StoreService {
 		tr.save(timeline);
 	}
 
-	public int reportbooking(int id, reportDTO reportdto) {
+	public List<Report> reportbooking(int id, reportDTO reportdto) {
 		int count=0;
-		List<Integer> list =new ArrayList<>();
+		String[] date = reportdto.getDate().split("-");
+		int year=Integer.parseInt(date[0]);
+		int month=Integer.parseInt(date[1]);
+		List<Report> list =new ArrayList<>();
 		if (reportdto.getType()==1) {
-			list = br.findByIdandDate(id, reportdto.getDate());
+			list =  br.findByIdandDate(id,month,year);
 		}
 		else if (reportdto.getType()==2) {
-			String[] date = reportdto.getDate().split("-");
-			int year=Integer.parseInt(date[0]);
-			int month=Integer.parseInt(date[1]);
-			list = br.findByIdandMonth(id,month,year);
+			list = br.findByIdandMonth(id,year);
 		}
-		for(int i=0;i<list.size()-1;i++){
-		if (list.get(i) == list.get(i+1)) {
-
-		}
-		else { count++; }
-		}
-		if (list.size() > 0) count++;
-		return count;
+		return list;
 	}
 }

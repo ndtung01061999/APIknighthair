@@ -3,6 +3,7 @@ package booking.controller;
 import java.util.List;
 
 import booking.dto.*;
+import booking.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,12 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import booking.entity.City;
-import booking.entity.Comment;
-import booking.entity.District;
-import booking.entity.ServiceHair;
-import booking.entity.Store;
-import booking.entity.Store_Service;
 import booking.service.CityService;
 import booking.service.StoreService;
 
@@ -116,7 +111,7 @@ public class StoreController {
 	}
 
 	@PostMapping("/report/{id}")
-	public int getReport(@PathVariable("id") int id, @RequestBody reportDTO reportdto){
+	public List<Report> getReport(@PathVariable("id") int id, @RequestBody reportDTO reportdto){
 		return ss.reportbooking(id,reportdto);
 	}
 }

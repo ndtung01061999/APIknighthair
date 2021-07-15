@@ -1,8 +1,11 @@
 package booking.dto;
 
-public class reportDTO {
+import booking.entity.Report;
+
+public class reportDTO implements Report {
     int type; //type 1 :date , type 2: month
     String date;
+    int count;
 
     public int getType() {
         return type;
@@ -18,5 +21,13 @@ public class reportDTO {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

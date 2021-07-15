@@ -126,5 +126,6 @@
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.194" level="project" />
     <orderEntry type="library" name="Maven: org.modelmapper:modelmapper:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.activation:jakarta.activation:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:21.0.1" level="project" />
   </component>
 </module>

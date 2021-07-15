@@ -2,6 +2,8 @@ package booking.reposity;
 
 import java.util.List;
 
+import booking.dto.reportDTO;
+import booking.entity.Report;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -20,21 +22,25 @@ public interface BookingReposity extends JpaRepository<Booking,Integer>{
 			+ " group by booking.id ", nativeQuery = true)
 	List<Booking> findByIdstore(int id);
 
-	@Query(value = "select booking.id from booking, store,detail_booking,equipment_timeline,equipment\n" +
+	@Query(value = "select COUNT(distinct booking.id), day(equipment_timeline.date) from booking, store,detail_booking,equipment_timeline,equipment\n" +
 			" where\n" +
 			" booking.id = detail_booking.idbooking and\n" +
 			" detail_booking.idet= equipment_timeline.id and\n" +
 			" equipment_timeline.idequipment= equipment.id and\n" +
 			" equipment.idstore= store.id and\n" +
-			" store.id=?1 and equipment_timeline.date=?2",nativeQuery = true)
-	List<Integer> findByIdandDate(int id,String date);
+			" store.id=?1 and month(equipment_timeline.date)=?2 and year(equipment_timeline.date)=?3\n" +
+			" group by day(equipment_timeline.date)" +
+			" order by day(equipment_timeline.date) asc",nativeQuery = true)
+	List<Report> findByIdandDate(int id, int month, int year);
 
-	@Query(value = "select booking.id from booking, store,detail_booking,equipment_timeline,equipment\n" +
+	@Query(value = "select COUNT(distinct booking.id), month(equipment_timeline.date) from booking, store,detail_booking,equipment_timeline,equipment\n" +
 			" where\n" +
 			" booking.id = detail_booking.idbooking and\n" +
 			" detail_booking.idet= equipment_timeline.id and\n" +
 			" equipment_timeline.idequipment= equipment.id and\n" +
 			" equipment.idstore= store.id and\n" +
-			" store.id=?1 and month(equipment_timeline.date)=?2 and year(equipment_timeline.date)=?3",nativeQuery = true)
-	List<Integer> findByIdandMonth(int id,int month,int year);
+			" store.id=?1 and year(equipment_timeline.date)=?2\n" +
+			" group by month(equipment_timeline.date)" +
+			" order by month(equipment_timeline.date) asc",nativeQuery = true)
+	List<Report> findByIdandMonth(int id,int year);
 }
