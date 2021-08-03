@@ -3,7 +3,7 @@ package booking.service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+import org.json.JSONObject;
 import booking.dto.*;
 import booking.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -148,7 +148,6 @@ public class StoreService {
 
 	public List<TimelineDTO> findEquipment(int id, int type, String date) {
 		List<TimelineDTO> timelinedtos = new ArrayList();
-
 		Store store = sr.findOne(id);
 		Timeline time = tr.findByStore(store.getId());
 		int n = countTime(time.getTime_start(), time.getTime_end());
@@ -197,11 +196,11 @@ public class StoreService {
 
 		return time;
 	}
+
 	int countTime(String time_start, String time_end) {
 		String time_startnew[] = time_start.split(":");
 		int hourStart = Integer.parseInt(time_startnew[0]);
 		int minStart = Integer.parseInt(time_startnew[1]);
-
 		String time_endnew[] = time_end.split(":");
 		int hourEnd = Integer.parseInt(time_endnew[0]);
 		int minEnd = Integer.parseInt(time_endnew[1]);
@@ -218,7 +217,6 @@ public class StoreService {
 		int numberAll = er.findCountStoreandType(id, type);
 		List<Equipment> eqs = er.findByStoreandType(id, type);
 		List<Equipment_timeline> ets = etr.findAll();
-
 		for (Equipment item : eqs) {
 			for (Equipment_timeline item1 : ets) {
 				if (item.getId() == item1.getEquipments().getId() && item1.getOrdinalnumber() == ordnalnumber
@@ -227,7 +225,6 @@ public class StoreService {
 				}
 			}
 		}
-
 		return numberAll;
 	}
 
@@ -293,10 +290,8 @@ public class StoreService {
 			return "success";
 	}
 
-	public StoreCommentDTO findComment(int id) {
-		StoreCommentDTO storecommentdto = new StoreCommentDTO();
-		storecommentdto.setListcomment(sr.findByComment(id));
-		return storecommentdto;
+	public List<Comment> findComment(int id) {
+		return sr.findByComment(id);
 	}
 
 	public List<BookingDTO> findbooking(int id, String date) {
@@ -344,7 +339,6 @@ public class StoreService {
 			Equipmentdto.setNumberOf(er.findCountStoreandType(id, i));
 			Equipmentdtos.add(Equipmentdto);
 		}
-
 		return Equipmentdtos;
 	}
 

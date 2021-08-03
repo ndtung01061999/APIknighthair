@@ -2,7 +2,8 @@ package booking.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -164,7 +165,7 @@ public class BookingService {
 		Account account = ar.findOne(bookingdto.getIdaccount());
 		booking.setAccounts(account);
 		if(account.getType()==2) booking.setStatus(1);
-		else booking.setStatus(3); 
+		else booking.setStatus(5);
 		booking.setDate(java.time.LocalDateTime.now().toString());
 		br.save(booking);
 		List<DetailbookingDTO> details = bookingdto.getListdetail();
@@ -212,4 +213,13 @@ public class BookingService {
 		br.delete(booking);
 	}
 
+//	public void updatestatus(int id, String status) throws JSONException {
+//		JSONObject jsonObject=new JSONObject().getJSONObject(status);
+//		String status1 = (String) jsonObject.get("status");
+//		System.out.println(status1);
+//		Booking booking = br.findOne(id);
+//		if (booking != null) {
+//			//br.save(booking);
+//		}
+//	}
 }

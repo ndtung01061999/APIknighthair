@@ -2,6 +2,7 @@ package booking.controller;
 
 import java.util.List;
 
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,6 +38,11 @@ public class BookingController {
 	public void updatebooking(@PathVariable("id") int id, @RequestBody BookingDTO bookingdto) {
 		bs.update(id, bookingdto);
 	}
+
+//	@PutMapping("/status/{id}")
+//	public void updatestatus(@PathVariable("id") int id , @RequestBody String status) throws JSONException {
+//		bs.updatestatus(id,status);
+//	}
 
 	@PostMapping("")
 	public void createbooking(@RequestBody BookingDTO bookingdto) {

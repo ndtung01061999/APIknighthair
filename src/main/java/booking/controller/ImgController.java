@@ -16,11 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("img")
 public class ImgController {
-	@GetMapping("")
-public String getabc() {
-		return "test";
-	}
-
 	@GetMapping("/{name}")
 	public ResponseEntity<byte[]> getImage(@PathVariable("name") String name) throws IOException {
 		String filename = "src/main/resources/static/" + name + ".png";

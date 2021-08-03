@@ -6,6 +6,7 @@ import booking.dto.*;
 import booking.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -101,8 +102,8 @@ public class StoreController {
 	}
 
 	@GetMapping("/comment/{id}")
-	public StoreCommentDTO getComment(@PathVariable("id") int id){
-		return  ss.findComment(id);
+	public ResponseEntity<List<Comment>> getComment(@PathVariable("id") int id){
+		return ResponseEntity.ok().body(ss.findComment(id));
 	}
 
 	@GetMapping("/booking/{id}/{date}")
